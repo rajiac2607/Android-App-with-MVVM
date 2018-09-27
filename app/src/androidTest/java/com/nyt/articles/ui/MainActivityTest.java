@@ -1,12 +1,15 @@
 package com.nyt.articles.ui;
 
+import android.support.test.espresso.NoMatchingViewException;
 import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.view.KeyEvent;
+import android.view.View;
 
 import com.nyt.articles.R;
+import com.nyt.articles.data.model.Article;
 import com.nyt.articles.ui.fragment.ArticleListFragment;
 
 import org.junit.Before;
@@ -14,11 +17,14 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.ArrayList;
+
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.pressKey;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
@@ -57,9 +63,11 @@ public class MainActivityTest {
         //When
         onView(allOf(withId(R.id.action_search), withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE))).perform(
                 click());
-        onView(withId(R.id.search_src_text)).perform(typeText("riggaroo"), pressKey(KeyEvent.KEYCODE_ENTER));
+        onView(withId(R.id.search_src_text)).perform(typeText("kavan"), pressKey(KeyEvent.KEYCODE_ENTER));
 
         //Then
-        onView(withText("riggaroo")).check(matches((isDisplayed())));
+        onView(withText("kavan")).check(matches((isDisplayed())));
     }
+
+
 }

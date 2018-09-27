@@ -43,8 +43,8 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ArticlesListViewHolder holder, final int position) {
-        holder.bind(articles.get(position));
-        holder.listItemBinding.cardView.setOnClickListener(view -> onItemSelected.onItemSelected(articles.get(position))
+        holder.bind(articlesFiltered.get(position));
+        holder.listItemBinding.cardView.setOnClickListener(view -> onItemSelected.onItemSelected(articlesFiltered.get(position))
         );
     }
 

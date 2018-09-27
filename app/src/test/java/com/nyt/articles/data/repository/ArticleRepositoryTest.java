@@ -47,7 +47,7 @@ public class ArticleRepositoryTest {
 
 
     @Test
-    public void loadArticles() {
+    public void loadArticles_Success() {
         try {
             Response response = webService.loadArticles("all-sections",7).execute();
             assertEquals(response.code(), 200);
@@ -56,4 +56,5 @@ public class ArticleRepositoryTest {
             e.printStackTrace();
         }
     }
+
 }

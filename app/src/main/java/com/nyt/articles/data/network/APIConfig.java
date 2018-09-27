@@ -19,6 +19,4 @@ public final class APIConfig {
     public static final String NYT_API_SECTION="all-sections";
     public static final int NYT_API_INDEX =7;
 
-    public static final String STATUS_SUCCESS = "SUCCESS";
-    public static final String STATUS_FAILURE = "FAILURE";
 }
