@@ -46,3 +46,10 @@ The coverage report will be generated on the following path.
 `app/build/reports`
 
 # Screenshot
+[screenshot1
+](https://github.com/rajiac2607/Android-App-with-MVVM/blob/master/screenshot/device-2018-09-27-145909.png)
+
+[screenshot2
+](https://github.com/rajiac2607/Android-App-with-MVVM/blob/master/screenshot/device-2018-09-27-145909.png)
+[screenshot3
+](https://github.com/rajiac2607/Android-App-with-MVVM/blob/master/screenshot/device-2018-09-27-145909.png)
