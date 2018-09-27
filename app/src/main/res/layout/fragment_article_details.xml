@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="articleDetailViewModel"
+            type="com.nyt.articles.viewmodel.ArticlesDetailsViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_8"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_16"
+                    android:text="@{articleDetailViewModel.article.title}"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+                <TextView
+                    style="@style/normalTextStyle_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_margin="@dimen/margin_16"
+                    android:text="@{articleDetailViewModel.article.byline}"
+                   />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:layout_marginBottom="@dimen/margin_8"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:text="@{articleDetailViewModel.article.published_date}"
+                    android:textSize="12sp"
+                    android:gravity="end"
+                    android:visibility="gone"
+                    android:textStyle="normal" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:layout_marginBottom="@dimen/margin_16"/>
+                <TextView
+                    style="@style/normalTextStyle_14"
+
+                    android:id="@+id/textContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_16"
+                    android:text="@{articleDetailViewModel.article.articleAbstract}"
+                   />
+
+            </LinearLayout>
+
+    </RelativeLayout>
+</layout>
