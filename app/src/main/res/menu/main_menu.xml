@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/today"
+            android:icon="@android:drawable/ic_menu_today"
+
+            android:title="@string/today" />
+        <item
+            android:id="@+id/weekly"
+            android:icon="@android:drawable/ic_menu_week"
+
+            android:title="@string/weekly" />
+        <item
+            android:id="@+id/monthly"
+            android:icon="@android:drawable/ic_menu_month"
+            android:title="@string/monthly" />
+    </group>
+</menu>

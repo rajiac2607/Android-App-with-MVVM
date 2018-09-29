@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import com.nyt.articles.R;
 import com.nyt.articles.data.model.Article;
 import com.nyt.articles.databinding.FragmentArticleListBinding;
+import com.nyt.articles.ui.MainActivity;
 import com.nyt.articles.ui.adapter.ArticleListAdapter;
 import com.nyt.articles.ui.fragment.util.FragmentUtil;
 import com.nyt.articles.util.Logs;
@@ -44,6 +45,7 @@ public class ArticleListFragment extends BaseFragment<ArticlesViewModel,
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+        setRetainInstance(true);
     }
 
     @Nullable
@@ -62,14 +64,14 @@ public class ArticleListFragment extends BaseFragment<ArticlesViewModel,
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        ArticlesViewModel articleListViewModel = ViewModelProviders.of(this).get(ArticlesViewModel.class);
+        ArticlesViewModel articleListViewModel = ViewModelProviders.of(getActivity()).get(ArticlesViewModel.class);
 
         articleListViewModel.getArticleList().observe(getActivity(), article -> {
 
                     if (null != article) {
                         Logs.v("result", "request successful with" + article.size());
-
-                        dataBinding.progressBar.setVisibility(View.GONE);
+                        if(getActivity()!=null)
+                        ((MainActivity)getActivity()).hideProgressBar();
                         dataBinding.recyclerView.setVisibility(View.VISIBLE);
                         ((ArticleListAdapter) dataBinding.recyclerView.getAdapter()).setArticles(article);
 
@@ -124,7 +126,6 @@ public class ArticleListFragment extends BaseFragment<ArticlesViewModel,
         searchView.setSearchableInfo(searchManager
                 .getSearchableInfo(getActivity().getComponentName()));
         searchView.setMaxWidth(Integer.MAX_VALUE);
-
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

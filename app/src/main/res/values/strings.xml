@@ -7,6 +7,7 @@
     <string name="date">Date</string>
     <string name="search_hint">Search Articles</string>
     <string name="action_search">Search</string>
+    <string name="quit">Quit</string>
 
     <!-- Network Errors-->
     <string name="networkError">You are not connected to wifi or cellular data network. Please connect and try again</string>
@@ -20,7 +21,9 @@
     <string name="responseConnectFailed">Oops! Connection timeout.</string>
 
 
-
+    <string name="today">Today</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
 
     <string name="label">NY Times Most Popular Articles</string>
 </resources>

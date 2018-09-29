@@ -23,7 +23,6 @@ public class ArticlesViewModel extends AndroidViewModel {
     public ArticlesViewModel(@NonNull Application application) {
         super(application);
         initializeDagger();
-        loadArticles();
     }
 
     @Inject
@@ -49,10 +48,10 @@ public class ArticlesViewModel extends AndroidViewModel {
     /**
      * call repository method to fetch data from API
      */
-    public void loadArticles() {
+    public void loadArticles(int index ) {
 
-        articleRepository.loadArticles(getApplication(), APIConfig.NYT_API_SECTION, APIConfig.NYT_API_INDEX, (error, list) -> {
-            articleList.setValue(list.getValue());
+        articleRepository.loadArticles(getApplication(), APIConfig.NYT_API_SECTION, index, (error, list) -> {
+            articleList.postValue(list.getValue());
 
             if (error != null)
                 Toast.makeText(getApplication(), getStringResourceByName(error.getErrorMessage()), Toast.LENGTH_SHORT).show();
